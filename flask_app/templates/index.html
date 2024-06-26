@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Popularity Prediction</title>
+</head>
+<body>
+    <h1>Song Popularity Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="artists">Artists:</label>
+        <input type="text" id="artists" name="artists" required><br><br>
+        
+        <label for="album_name">Album Name:</label>
+        <input type="text" id="album_name" name="album_name" required><br><br>
+        
+        <label for="track_name">Track Name:</label>
+        <input type="text" id="track_name" name="track_name" required><br><br>
+        
+        <label for="duration_ms">Duration (ms):</label>
+        <input type="number" id="duration_ms" name="duration_ms" required><br><br>
+        
+        <label for="explicit">Explicit (0 or 1):</label>
+        <input type="number" id="explicit" name="explicit" required><br><br>
+        
+        <label for="danceability">Danceability:</label>
+        <input type="number" step="0.01" id="danceability" name="danceability" required><br><br>
+        
+        <label for="energy">Energy:</label>
+        <input type="number" step="0.01" id="energy" name="energy" required><br><br>
+        
+        <label for="key">Key:</label>
+        <input type="number" id="key" name="key" required><br><br>
+        
+        <label for="loudness">Loudness:</label>
+        <input type="number" step="0.01" id="loudness" name="loudness" required><br><br>
+        
+        <label for="mode">Mode:</label>
+        <input type="number" id="mode" name="mode" required><br><br>
+        
+        <label for="speechiness">Speechiness:</label>
+        <input type="number" step="0.01" id="speechiness" name="speechiness" required><br><br>
+        
+        <label for="acousticness">Acousticness:</label>
+        <input type="number" step="0.01" id="acousticness" name="acousticness" required><br><br>
+        
+        <label for="instrumentalness">Instrumentalness:</label>
+        <input type="number" step="0.01" id="instrumentalness" name="instrumentalness" required><br><br>
+        
+        <label for="liveness">Liveness:</label>
+        <input type="number" step="0.01" id="liveness" name="liveness" required><br><br>
+        
+        <label for="valence">Valence:</label>
+        <input type="number" step="0.01" id="valence" name="valence" required><br><br>
+        
+        <label for="tempo">Tempo:</label>
+        <input type="number" step="0.01" id="tempo" name="tempo" required><br><br>
+        
+        <label for="time_signature">Time Signature:</label>
+        <input type="number" id="time_signature" name="time_signature" required><br><br>
+        
+        <label for="track_genre">Track Genre:</label>
+        <input type="text" id="track_genre" name="track_genre" required><br><br>
+        
+        <input type="submit" value="Predict Popularity">
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
